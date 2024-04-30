@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAV BAR</title>
+    <link rel="stylesheet" href="navbar.css"/>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+</style>
+    <!-- <link rel="stylesheet" href="kalyani.css"/> -->
+
+</head>
+<body>
+   <header>
+      <nav class="navbar">
+          <a href="#" class="nav_NAME">coding attitude </a>
+          <ul class="nav_menu">
+              <li classs="nav_items">
+                  <a href="#" class="nav_link">Contacts</a>
+              </li>
+              <li classs="nav_items">
+                  <a href="#" class="nav_link">About</a>
+              </li>
+              <li classs="nav_items">
+                  <a href="#" class="nav_link">Project</a>
+              </li>
+              <li classs="nav_items">
+               <a href="#" class="nav_link">Home</a>
+           </li>
+          </ul>
+          <div class="hamburger">
+            <!-- <i style="font-size:24px" class="fa">&#xf0c9;</i> -->
+            <i class="fa fa-bars" style="font-size:24px"></i>
+
+          </div>
+          
+      </nav>
+  </header>
+    
+</body>
+<script>
+const hamburger=document.querySelector(".hamburger")
+const ul=document.querySelector("ul")
+hamburger.addEventListener('click',()=>{
+  ul.classList.toggle("ham_active")
+
+  let ham_child=hamburger.firstElementChild;
+  if(ul.classList.contains("ham_active")){
+    ham_child.classList.replace("fa-bars","fa-close")
+
+  }
+  else{
+    ham_child.classList.replace("fa-close","fa-bars")
+
+  }
+
+ })
+
+</script>
+</html>

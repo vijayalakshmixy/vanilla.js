@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Counter</title>
+    <style>
+        body{
+            background-color: rgb(166, 168, 167);
+            text-align: center;
+            margin-top: 18%;
+          
+        }
+        h1{
+            color:black;
+            font-size: 50px;
+        }
+        button{
+            font-size: 25px;
+            background-color: rgb(250, 85, 56);
+            border-radius: 8px;
+            height: 2.5rem;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Counter<br><span>0</span></h1>   
+        <button onclick="sub()">Decrease</button>
+        <button style="background-color:rgb(250, 245, 246);"onclick="add()">Increase</button>
+        <button style="background-color:chartreuse"onclick="reset()">Reset</button>
+    </div>
+
+
+    <script>
+        let span=document.querySelector('span')
+        //console.log(span)
+        count=parseInt(span.innerText)
+
+        function add(){
+            count=count+1
+            span.innerText=count
+            span.style.color="red"
+            
+        }
+        function sub(){
+            count=count-1
+            span.innerText=count
+            span.style.color="green"
+        }
+        function reset(){
+            if (count>0){
+                count=0
+                span.innerText=count
+                span.style.color="white"
+                
+            }else{
+                count=0
+                span.innerText=count
+                span.style.color="white"
+            }
+        }
+    </script>
+</body>
+</html>

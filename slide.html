@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .slide_container{
+      width: 60%;
+      height: 500px;
+      margin: auto;
+      margin-top: 100px;
+      box-shadow: 0 0 4px  rgb(9, 67, 190);
+      position: relative;
+      overflow: hidden;
+    }
+    .slide{
+      height: 100%;
+      width: 100%;
+      transition: transform 1s ease; /* Updated transition property */
+      position: absolute;
+    }
+    .btn_container{
+      text-align: center;
+      margin-top: 15px;
+    }
+    .btn_container button{
+      font-size: 20px;
+      padding: 5px;
+      border-radius:2px;
+      /* height:2rem; */
+      width:5rem;
+      background-color:chocolate;
+      
+    }
+  </style>
+</head>
+<body style="background-color: hsl(29, 66%, 73%);">
+  <div class="slide_container">
+      <img src="https://newsd.in/wp-content/uploads/2019/07/846097-armaanmalik-070919-1280x720.jpg" class="slide" alt=""/>
+      <img src="https://newsd.in/wp-content/uploads/2019/07/846097-armaanmalik-070919-1280x720.jpg" class="slide" alt=""/>
+      <img src="https://newsd.in/wp-content/uploads/2019/07/846097-armaanmalik-070919-1280x720.jpg" class="slide" alt=""/>
+      <img src="https://newsd.in/wp-content/uploads/2019/07/846097-armaanmalik-070919-1280x720.jpg" class="slide" alt=""/>
+      <!-- <img src="https://newsd.in/wp-content/uploads/2019/07/846097-armaanmalik-070919-1280x720.jpg" class="slide" alt=""/> -->
+
+  </div>
+  <div class="btn_container">
+    <button onclick="goprev()">
+      prev</button>
+    <button onclick="gonext()">
+      next</button>
+  </div>
+  <script>
+    const slides=document.querySelectorAll(".slide")
+    var counter=0
+    slides.forEach(
+      (slide,index)=>{
+        slide.style.left= `${index*100}%`
+      }
+    )
+    const goprev=()=>{
+      counter--
+      slideImage()
+    }
+    const gonext=()=>{
+      counter++
+      slideImage()
+    }
+    const slideImage=()=>{
+      slides.forEach(
+        (slide)=>{
+          slide.style.transform =`translateX(-${counter*100}%)`
+        }
+      )
+    }
+  </script>
+</body>
+</html>

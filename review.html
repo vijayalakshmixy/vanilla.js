@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our reviews</title>
+    <link rel="stylesheet" href="review.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <title>REVIEWS</title> -->
+</head>
+<body>
+    <h2>Our Reviews</h2>
+    <div class="main_container">
+
+        
+        <div class="card_container">
+            <div class="image-container">
+                <img src="https://i.pinimg.com/280x280_RS/a6/24/4d/a6244d9779087326a2a8b4cde275ea0a.jpg" alt="">
+            </div>
+            <h4 class="name">SARA</h4>
+            <p class="job_title">UI Designer</p>
+            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, sit eum perferendis ipsam asperiores.</p>
+            <div class="button">
+                <button class="prev_button"><span class="glyphicon glyphicon-menu-left"></span></button>
+                <button class="next_button"><span class="glyphicon glyphicon-menu-right"></span></button>
+            </div>
+        </div><br>
+        <div class="card_container">
+            <div class="image-container">
+                <img src="https://i.pinimg.com/280x280_RS/a6/24/4d/a6244d9779087326a2a8b4cde275ea0a.jpg" alt="">
+            </div>
+            <h4 class="name">SAINI</h4>
+            <p class="job_title">UI Designer</p>
+            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, sit eum perferendis ipsam asperiores.</p>
+            <div class="button">
+                <button class="prev_button"><span class="glyphicon glyphicon-menu-left"></span></button>
+                <button class="next_button"><span class="glyphicon glyphicon-menu-right"></span></button>
+            </div>
+        </div>
+        <div class="card_container">
+            <div class="image-container">
+                <img src="https://i.pinimg.com/280x280_RS/a6/24/4d/a6244d9779087326a2a8b4cde275ea0a.jpg" alt="">
+            </div>
+            <h4 class="name">SAMEERA</h4>
+            <p class="job_title">UI Designer</p>
+            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos, sit eum perferendis ipsam asperiores.</p>
+            <div class="button">
+                <button class="prev_button"><span class="glyphicon glyphicon-menu-left"></span></button>
+                <button class="next_button"><span class="glyphicon glyphicon-menu-right"></span></button>
+            </div>
+        </div> 
+        <!-- Add more card containers here if needed -->
+    </div>
+    
+    <script>
+
+        const prevButton = document.querySelectorAll(".prev_button");
+        const nextButton = document.querySelectorAll(".next_button");
+        const cardContainers = document.querySelectorAll(".card_container");
+    
+        let currentIndex = 0;
+        const maxIndex = cardContainers.length - 1;
+    
+        prevButton.forEach(btn => {
+            btn.addEventListener("click", () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateDisplay();
+                }
+            });
+        });
+    
+        nextButton.forEach(btn => {
+            btn.addEventListener("click", () => {
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateDisplay();
+                }
+            });
+        });
+    
+        function updateDisplay() {
+            cardContainers.forEach((card, index) => {
+                card.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
+            });
+        }
+    </script>
+</body>
+</html>

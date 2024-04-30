@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>GROCERY LIST</title>
+      <link rel="stylesheet" href="grocery.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <header>
+            <h1> grocery list</h1>
+            <form id="new_task_form">
+                <input
+                    type="text"
+                    id="new_task_input"
+                    placeholder="enter your item"/>
+                <input
+                    type="submit"
+                    id="new_task_submit"
+                    value="Add task"/>
+            </form>
+        </header>
+        <main>
+            <section class="task_list">
+                <h2>Tasks</h2>
+                <div id="tasks"></div>
+            </section>
+        </main>
+        
+         <script>
+            window.addEventListener('load', () => {
+                const form = document.querySelector("#new_task_form");
+                const input = document.querySelector("#new_task_input");
+                const list_el = document.querySelector("#tasks");
+    
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+    
+                    const task = input.value;
+    
+                    if(!task){
+                        alert("enter your item");
+                        return;
+                    }
+    
+                    const task_el = document.createElement('div');
+                    task_el.classList.add('task');
+    
+                    const task_content_el = document.createElement('div');
+                    task_content_el.classList.add('content');
+                    // task_content_el.innerText = task;
+    
+                    task_el.appendChild(task_content_el);
+    
+                    // list_el.appendChild(task_el);
+                    // input.value = ''; // Clear input field after adding task
+                    const task_input_el=document.createElement("input");
+                    task_input_el.classList.add("text")
+                    task_input_el.type="text"
+                    task_input_el.value=task;
+                    task_input_el.setAttribute("readonly","readonly")
+
+
+                    task_content_el.appendChild(task_input_el);
+
+                    // list_el.appendChild(task_el)
+
+                    const task_actions_el=document.createElement("div")
+                    task_actions_el.classList.add("actions");
+
+                    const task_edit_el=document.createElement("button")
+                    task_edit_el.classList.add("edit");
+                    task_edit_el.innerHTML="Edit"
+
+
+                    const task_delete_el=document.createElement("button")
+                    task_delete_el.classList.add("delete");
+                    task_delete_el.innerHTML="Delete";
+
+                    task_actions_el.appendChild(task_edit_el);
+                    task_actions_el.appendChild(task_delete_el);
+                    
+
+                    task_el.appendChild(task_actions_el);
+
+                     list_el.appendChild(task_el);
+
+                     input.value="";
+
+
+                     task_edit_el.addEventListener('click',()=>{
+                        if(task_edit_el.innerText.toLowerCase()=="edit")
+                        {
+                            task_input_el.removeAttribute("readonly")
+                            task_input_el.focus();
+                            task_edit_el.innerText="save"
+                        }else{
+                            task_input_el.setAttriute("readonly","readonly")
+                            task_edit_el.innerText="Edit"
+                        }
+
+                        })
+                        task_delete_el.addEventListener("click",()=>{
+                            list_el.removeChild(task_el); 
+                        })
+
+ 
+
+
+                });
+            });
+        </script>
+    </body>
+    </html>

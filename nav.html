@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+    header{
+        position: fixed;
+        /* top: 0; */
+        /* left: 0; */
+        width: 100%;
+        padding: 21px 10px;
+        background-color: #11141a;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+    }
+    .logo{
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        font-weight: 600;
+    }
+    nav a{
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+        font-weight: 500;
+        margin-left: 35px;
+    }
+    nav a:hover,
+    nav a.active{
+        color: #0ef;
+    }
+    section{
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #1f242d;
+        font-size: 100px;
+        color: #fff;
+        font-weight: 600;
+    }
+    section:nth-child(odd){
+        background-color: #323946;
+    }
+</style>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#service">Service</a>
+            <a href="#about">About</a>
+            <a href="#contact">contact</a>
+        </nav>
+    </header>
+    <section id="home">Home</section>
+    <section id="service">Service</section>
+    <section id="about">About</section>
+    <section id="contact">Contact</section>
+</body>
+</html>

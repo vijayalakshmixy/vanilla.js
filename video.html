@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Background Video</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+              }
+              .container {
+                background: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+              
+              h1 {
+                font-size: 3.4rem;
+                color: white;
+                letter-spacing: 0.4rem;
+                font-family: bolder;
+                margin-bottom: 200px;
+              }
+              
+              .video {
+                position: absolute;
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+              .header {
+                height: 100vh;
+                display: grid;
+                place-items: center;
+              }
+              .btn{
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                border-radius: 18px;
+                align-items: center;
+                margin-top: 20rem;
+              }
+              .btn span{
+                display: inline-block;
+                font-size: 20px;
+                color: black
+              }
+              button{
+                height: 40px;
+                width: 100px;
+                font-size: 1px;
+                border-radius: 10px;
+              }
+        </style>
+    </head>
+    <body>
+      
+            <div class="container"></div>
+            <div class="header">
+                <video class="video" contorls muted autoplay loop 
+                src="https://media.istockphoto.com/id/961419370/video/exploding-tea-leafs-in-4k.mp4?s=mp4-640x640-is&k=20&c=nLS9G86DhhTrRGXh4xfLq5HDs1-2OKLgmM-nAV8S8Wo="></video>
+                <h1>VIDEO PROJECT</h1>
+                <div class="btn">
+                    <button>
+                        <span>Play</span>
+                    </button>
+                </div>
+
+<script>
+const container = document.querySelector(".container");
+const video = document.querySelector(".video");
+const btn = document.querySelector(".btn");
+btn.addEventListener("click", () => {
+  if (video.paused){
+    video.play();
+  } else {
+    video.pause();
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Count-down timer</title>
+  <style>
+    *{
+        box-sizing: border-box;
+      }
+      body{
+        background-image: url('data:image/jpeg;base64,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');
+        font-family: "Poppins",sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        background-size:cover;
+        color: black;
+        align-items: center;
+        overflow: auto;
+        display: flex;
+        flex-direction:column;
+        background-position: center center;
+    }
+      
+    .countdown-container{
+        display: flex;
+        margin-top: -1rem;
+    }
+    .big-text{
+        font-size: 3rem;
+        line-height:1;
+        margin:0 2rem;
+        font-weight: bold;
+        background-color: rgba(55, 55, 97, 0.623);
+    }
+    .countdown{
+        text-align: center;
+    }
+    .countdown span{
+        font-size: 1.1rem;
+    }
+    .gift-img {
+        margin-bottom: 2rem;
+    }
+    .gift-info h3 {
+        color:#161616;
+    }
+    .gift-info p {
+        color: #161616;
+    }
+    .gift-img img{
+        height: 20rem;
+        width: 27rem;
+        margin-top: 15px;
+    }
+    h3,h4 {
+        letter-spacing: 3px;
+        line-height: 1.25;
+        margin-bottom: 0.75rem;
+    }
+    h3 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    h4 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    p {
+        margin-bottom: 2.25rem;
+        color:#333;
+    }
+  </style>
+</head>
+<body>
+    <div class="gift-img">
+        <img src="https://raw.githubusercontent.com/john-smilga/javascript-basic-projects/47645c5a6d48a526d61a34d81890a8f7e646423c/12-countdown-timer/setup/gift.jpeg"  />
+    </div>
+    <!-- info -->
+    <div class="gift-info">
+      <h3>OLD IPHONE GIVEAWAY</h3>
+      <h4>
+        giveaway ends on wednesday, 24 April 2024, 
+      </h4>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+        <br>Reprehenderit molestiae cum libero atque ut voluptate qui consectetur
+        <br>aliquid incidunt voluptatem quos, dolore, non commodi quaerat aliquam
+        <br>eligendi, quisquam totam blanditiis.
+      </p>
+  <div class="countdown-container">
+  <div class=" countdown days">
+    <p class="big-text" id="days">00</p>
+      <span>Days</span>
+  </div>
+  <!----------------hours container-->
+  <div class="countdown hours">
+    <p class="big-text" id="hours">00</p>
+      <span>Hour</span>
+  </div>
+
+  <!---------------------minutes container-->
+  <div class="countdown mins">
+    <p class="big-text" id="min">00</p>
+      <span>mins</span>
+  </div>
+
+  <!-----seconds container------------------>
+  <div class="countdown seconds">
+    <p class="big-text" id="seconds">00</p>
+      <span>Seconds</span>
+  </div>
+  </div>
+</div>
+  <script>
+const day=document.getElementById('days')
+const hour=document.getElementById('hours')
+const minute=document.getElementById('min')
+const second=document.getElementById('seconds');
+
+const newYears='25 April 2024'
+function countDown(){
+  const newYearDate=new Date(newYears)
+  const currentDate=new Date()
+  const TotalSeconds=(newYearDate-currentDate)/1000;
+  const days=Math.floor(TotalSeconds/3600/24);
+  const hours=Math.floor(TotalSeconds/3600)%24
+  const minutes=Math.floor(TotalSeconds/60)%60;
+  const seconds=Math.floor(TotalSeconds)%60;
+
+
+  day.innerHTML=days;
+  hour.innerHTML=hours;
+  minute.innerHTML=minutes;
+  second.innerHTML=seconds;
+  
+}
+countDown()
+setInterval(countDown,1000)
+  </script>
+</body>
+</html>
